@@ -40,7 +40,7 @@ Analyze Cyclistic's 2022 trip data to understand how casual riders and annual me
 
 ## Prepare
 The first step in my prepare process is to download all of the data that I will need for my analysis. We will be using the Cyclistic trip data for 2022 which needs to be download in 12 separtate .csv files for each month of the year and stored in a dedicated folder. The data has been made available by Motivate International Inc. under this license. 
-
+## Process
 ### Data Cleaning
 #### Excel
 To begin the data cleaning process, I opened each .csv file in excel and did the following
@@ -53,3 +53,19 @@ To begin the data cleaning process, I opened each .csv file in excel and did the
 
 #### SQL
 Because of the size of each .csv file I chose to switch over to SQL to continue cleaning and analysis in a more efficient way. However, the sandbox mode in BigQuery only allows you to upload files that are up to 100MB in size. Seeing that there are multiple files that are larger than 100M, I combatted this by creating a bucket using Google Cloud Storage to enable me to upload my larger files where I could then upload them to BigQuery.
+
+After Uploading each of the twelve files, I combined each file into one table labeled **combined_data** using the **union** function. In the same query, I removed each of the rows that contained null values. 
+
+I now had a single table that had all of the clean data needed for my analysis.
+
+## Analyze
+To begin the analysis phase, I wanted to reemphasize the business task ***How do casual riders and members use bikes differently?*** 
+
+To answer this question, there were a few things that I identified that I could pull from the data. I wrote queries for the following:
+* **Total # of trips per rider type**
+* **Total # of trips per rider type per bike type**
+* **Average ride length per rider type**
+* **Total # of trips and average length of trip per rider type per month, day, and hour of day**
+* **Most Popular Start and End Stations per rider type**
+
+All SQL queries canbe found **here**
