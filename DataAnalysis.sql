@@ -179,6 +179,8 @@ order by
 SELECT
   member_casual,
   start_station_name,
+  AVG(start_lat) as start_lat,
+  AVG(Start_lng) as start_lng,
   count(*) as num_of_trips
 FROM
   `capstone-case-study-389823.cyclistic_2022_tripdata.combined_data`
@@ -188,11 +190,14 @@ order by
   member_casual, num_of_trips desc
 
 
+
 -- Most popular end stations per rider type
 
 SELECT
   member_casual,
   end_station_name,
+  AVG(end_lat) as end_lat,
+  AVG(end_lng) as end_lng,
   count(*) as num_of_trips
 FROM
   `capstone-case-study-389823.cyclistic_2022_tripdata.combined_data`
