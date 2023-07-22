@@ -1,6 +1,6 @@
 - Data Cleaning in SQL
 
--Combine all tables into one table and remove all nulls -
+-Combine all tables into one table and remove all nulls - 
 
 Select *
 From ((select
